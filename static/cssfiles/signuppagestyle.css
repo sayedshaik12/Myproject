@@ -1,0 +1,58 @@
+body{
+    
+    background-image: url("image9.jpg");    
+}
+#createid{
+    font-size: 30px;
+}
+p{
+    font-size: 20px;
+}
+#logincolor{
+color: blue;
+text-decoration: none;
+}
+
+#glass{
+    font-weight: 600;
+    padding-left: 5%;
+    padding-top: 2%;
+    position:relative;
+    border-radius: 20px;
+    left:30%;
+    margin-top: 5%;
+    width: 40%;
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.9);
+    overflow: hidden;
+    color: #000;
+    
+}
+input{
+    font-size: 20px;
+    padding-top: 2px;
+    border: solid 2px black;
+    width: 70%;
+    border-radius: 20px;
+    padding-left: 5px;
+}
+#asome{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 6vw;
+     background-color: blue;
+     padding-left: 1.8vw;
+     color: white;
+     width: 18vw;
+     height: 50px;
+     border-radius: 20px;
+
+}
+p{
+    margin-bottom: 6px;
+}
+.signcolor{
+    color:white;
+    
+    text-decoration: none;
+}

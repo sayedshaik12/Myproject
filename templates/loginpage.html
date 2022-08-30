@@ -1,0 +1,68 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+    
+<head>
+    <title>LOGIN PAGE</title>
+
+    <link rel="stylesheet" href="{% static 'cssfiles/homepagestyle.css' %}"> 
+    <link rel="stylesheet" href="{% static 'cssfiles/loginpagestyle.css' %}"> 
+</head>
+<style>
+    body{
+        background-image: url("{% static 'image9.jpg' %}");
+        
+    }
+</style>
+<body >  
+    <div id="logo">LIVE FOR OTHERS</div>
+    <div class="topnav">
+      <a class="active" href="/">Home</a>
+      <a class="active5" href="progress">Progress</a>
+      <a href="about" class="active3">About</a>
+      {% if user.is_authenticated %}
+      <a class="active1" href="logout">LogOut</a>
+    {%  else %}
+<a class="active1" href="login">Login/Signup</a>
+  {% endif %}
+      
+    </div>
+    <style>
+        h3{
+            color: red;
+        }
+        h2{
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+            font-size: 30px;
+            margin-bottom: 10px;
+            color:darkblue;
+        }
+    </style>
+   
+<form action="login" method="POST" id="formid">
+    <h2>Please Login Here!</h2>
+    {% csrf_token  %}
+     {% for message in messages %}
+    <h3 class="message">{{message}} </h3>
+      {% endfor %}
+    <p class="username">Username:</p><br>
+    <p><input type="text" minlength="4" name="username" maxlength="40" placeholder="Eg:sohel123"></p><br>
+    
+    <p class="username">Password:</p><br>
+    <p><input type="password" id="margins" placeholder="***********" name="password" ></p>
+    
+    <i id="newsignup" class="forgot">Forgot Password<a href="generate_otp"> Click Here!! </a></i><br><br><br>
+    <i id="newsignup" >Don't have an account? <a href="signup">SignUp Here</a></i>
+    <p id="margin"><input class="loginclass"  type="submit" value="Login Here"></p>
+   </form>
+    
+</body>
+</html>
+{% endblock %}

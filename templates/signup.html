@@ -1,0 +1,77 @@
+{% block content %}
+<!DOCTYPE html>
+{% load static %}         
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'cssfiles/homepagestyle.css' %}">
+    <link rel="stylesheet" href="{% static 'cssfiles/signuppagestyle.css' %}">
+    <title>SIGNUP PAGE</title>
+
+    <style>
+      body{
+          background-image: url("{% static 'image9.jpg' %}");
+          
+      }
+  </style>
+
+</head> 
+<body>
+  
+<div>
+<div id="logo">LIVE FOR OTHERS</div>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+  <a class="active5" href="progress">Progress</a>
+  <a href="about" class="active3">About</a>
+  {% if user.is_authenticated %}
+  <a class="active1" href="logout">LogOut</a>
+{%  else %}
+<a class="active1" href="login">Login/Signup</a>
+{% endif %}
+ 
+  
+</div>
+<style>
+    h3{
+        color: red;
+    }
+</style>
+
+<form action="signup" method="POST" id="glass">
+    {% csrf_token  %}
+   
+    
+    <div class="font">
+    <p id="createid">Create your account here!</p>
+    {% for message in messages %}
+    <h3>{{message}} </h3>
+      {% endfor %}
+    <p>Full Name:</p>
+    <p><input type="text" name="fullname" placeholder="Eg:Sohel Shaik"></p>
+    
+    <p>Username:</p>
+    <p><input type="text" placeholder="Eg:sohel12" name="username" ></p>
+    <p>Email:</p>
+    <p><input type="email" name="email" placeholder="Eg:sohel@gmail.com"></p>
+    
+    <p>Mobile number:</p>
+    <p><input type="number" placeholder="Eg:8218128818" minlength="10" maxlength="10" name="mobile" ></p>
+   
+    <p>Password:</p>
+    <p><input type="password" name="password" placeholder="*************"></p>
+   
+    <p>Conform Password:</p>
+    <p><input type="password" placeholder="*************" name="confirmpassword" ></p>
+    
+    <p>Already have an account! <a href="login" id="logincolor">Please login !!</a></p>
+    <a href="/" class="signcolor"><input type="submit" name="signup" value="SignUp " id="asome" ></a>
+</div>
+</form>     
+    
+</body>
+</html>
+{% endblock %}

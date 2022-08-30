@@ -1,0 +1,162 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+     <link rel="stylesheet" href="{% static 'cssfiles/aboutpage.css' %}">
+     <link rel="stylesheet" href="{% static 'cssfiles/homepagestyle.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head> 
+<body> 
+    <div id="logo">LIVE FOR OTHERS</div>
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+   <a class="active5" href="progress">Progress</a>
+  <a href="about" class="active3">About</a>
+  {% if user.is_authenticated %}
+      <a class="active1" href="logout">LogOut</a>
+    {%  else %}
+<a class="active1" href="login">Login/Signup</a>
+  {% endif %}
+  
+ 
+  
+  
+</div> 
+
+  <div class="email">
+   <p class="contact">People who are intrested in social service can join Live for others.</p> 
+   <p class="contact"> Contact us : liveforothers129@gmail.com</p> 
+  </div>
+
+  </div>
+  {% if user.is_authenticated %}
+  <div class="volunteers">
+    Volunteers involved in this group.
+  </div>
+  <div class="grid">
+    <div class="ingrid">
+     <img src="{% static 'aboutimages/pavan.jpeg' %}" alt="pavan" width="100%" height="99%">
+     <p class="nametag">Pavan</p>
+    </div>
+     <div class="ingrid">
+        <img src="{% static 'aboutimages/suresh.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Suresh</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/mahesh1.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Mahesh</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/sayed.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Sayed</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/veeru.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Veeranna</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/akshaya.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Akshaya</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/nagesh.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Nagesh</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/akhil.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Akhil</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/akhila.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Akhila</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/ganesh.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Ganesh</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/swathi.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Swathi</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/tejasree.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Tejasree</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/lily.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Lily varsha</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/manasa1.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Manasa</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/akhil_lt.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Akhil</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/jhansi.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Jhansi</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/nagaraju.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Nagaraju</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/rajesh.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Rajesh</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/sandeep.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Sandeep</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/shanker.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Shanker</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/shiva_gr.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Shiva</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/shruthi.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Shruthi</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/sindhu.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Sindhu</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/shiva.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Shiva</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/sravan.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Sravan</p>
+       </div>
+       <div class="ingrid">
+        <img src="{% static 'aboutimages/srinu.jpeg' %}" alt="pavan" width="100%" height="99%">
+        <p class="nametag">Srinu</p>
+       </div>
+
+    </div>
+    {% else %}
+    <p class="notlogin">Please login to see volunteers involved in Live for others</p>
+    {% endif  %}
+    <style>
+      .notlogin{
+        border: 0;
+        margin-top: 30px;
+        color: red;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+</body>
+</html>
+{% endblock %}

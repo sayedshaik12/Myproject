@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET OTP PAGE</title>
+    <link rel="stylesheet" href="{% static 'cssfiles/generate.css' %}">
+</head>
+<style>
+    h3{
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="email">
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+        <form action="generate_otp" method="POST">
+            {% csrf_token %}
+           <p> Enter your email here: </p>
+           <p> <input type="email" name="emailforgot"> </p>
+
+           <p> <input class="sendotp" type="submit" value="Send OTP"> </p>
+        </form>
+
+      
+
+
+    </div>
+</body>
+</html>

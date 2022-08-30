@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p{
+    margin-bottom: 8px;
+}
+a{
+    text-decoration: none;
+}
+
+#formid{
+    width: 40%; 
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    overflow: hidden;
+    color: #000;
+    margin-top: 20px; 
+    border-radius: 20px;
+    font-size: 20%;
+    position:relative;
+    padding-left: 5vw;
+    padding-top: 20px;
+    padding-bottom: 3%;
+    top: 30%;
+    left: 32%; 
+    font-weight: 600;
+    
+}
+input{
+    background-color: white;
+    color: black;
+    position: relative;
+    width: 80%;
+    border-color: black;
+    border-radius: 20px;
+    font-size: 20px;
+    padding-top: 5px;
+    padding-left: 5px;
+    font-weight: bolder;
+    
+}
+
+.loginclass{
+    display: block;
+    color: white;
+    padding-left: 20px;
+    background-color: blue;
+    width: 25vw;
+    float: left;
+    padding-bottom: 5px;
+    margin-left: 10%;
+}
+.message{
+    font-size: 26px;
+    color: red;
+}
+
+.username{
+    font-size: 22px;
+}
+#newsignup{
+    
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+#margins{
+    margin-bottom: 18px;
+}
+#margin{
+    padding-bottom: 9px;
+    margin-top: 19px;
+}

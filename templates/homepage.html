@@ -1,0 +1,112 @@
+{% block content %}
+{% load static %} 
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'cssfiles/homepagestyle.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>LIVE FOR OTHERS</title>
+</head>
+<body>
+<div id="logo">LIVE FOR OTHERS</div>
+<div class="topnav">
+  <a class="active anotheractive" href="/">Home</a>
+  
+  <a class="active5" href="progress">Progress</a>
+  <a href="about" class="active3">About</a>
+  {% if user.is_authenticated %}
+      <a class="active1 " href="logout">LogOut</a>
+    {%  else %}
+<a class="active1" href="login">Login/Signup</a>
+  {% endif %}
+</div>
+{% if user.is_authenticated %}
+    <div class="welcomepage">
+        Welcome to Live for others {{user.username}}
+    </div>
+  {% endif %}
+<div class="grid">
+     <div class="ingrid">
+      <img src="{% static 'homepics/home1.jpg' %}" alt="Orphanimages" width="100%" height="99%">
+     </div>
+     <div class="ingrid">
+      <img src="{% static 'homepics/home2.jpg' %}" alt="Orphanimages" width="100%" height="99%">
+     </div>
+     <div class="ingrid">
+      <img src="{% static 'homepics/home3.jpg' %}" alt="Orphanimages" width="100%" height="99%">
+     </div>
+     <div class="ingrid">
+      <img src="{% static 'homepics/home5' %}" alt="Orphanimages" width="100%" height="99%">
+     </div>
+     <div class="ingrid">
+      <img src="{% static 'homepics/home6.jpg' %}" alt="Orphanimages" width="100%" height="99%">
+     </div>
+     <div class="ingrid">
+      <img src="{% static 'homepics/home7.jpg' %}" alt="Orphanimages" width="100%" height="99%">
+     </div>
+     <div class="ingrid">
+      <img src="{% static 'homepics/home8.jpg' %}" alt="Orphanimages" width="100%" height="99%">
+     </div>
+     <div class="ingrid">
+      <img src="{% static 'homepics/home9.jpg' %}" alt="Orphanimages" width="100%" height="99%">
+     </div>
+     <div class="ingrid">
+      <img src="{% static 'homepics/home10.jpg' %}" alt="Orphanimages" width="100%" height="99%">
+     </div>
+</div>
+<div class="blog_heading">
+    Feel free to share your thoughts and opinions in live for others blog.
+    {% if user.is_authenticated %}
+    <br>
+    {% else %}
+          <br>  Please login to share your opinion
+            {% endif %}
+</div> 
+{% for con in content reversed %}
+<div class="pastwrittenblogs">
+  {% if user.is_authenticated %}
+
+       {% if user.username == con.heading %}
+  <a class="deletepost" href="/delete/{{con.id}}">Delete</a>
+        {% endif %}
+  {% endif %}
+  <p class="topicclass"> Topic :{{con.topic}}</p>
+  <p class="secondline"> {{con.heading}} 
+      posted on {{con.created_time}}</p>
+      <p class="previouscontentblog"> Description:</p>
+      <p> {{con.description|truncatewords:20}} </p>
+         
+</div>
+{% endfor %}
+   {% if user.is_authenticated %} 
+<div class="blog">
+  <style>
+    h2{
+      color: red;
+    }
+  </style>
+  <form action="/" method="POST" id="blogformid">
+    {% csrf_token %}
+    {% for message in messages %}
+        <h2>{{message}}</h2>
+        {% endfor %}
+   <p class="postform postform2"> In this form you can share your thoughts</p>
+        <p class="postform">Enter your username here:</p>
+        <p class="postform"><input type="text" name="namefield" placeholder="Your Name"></p>
+        <p class="postform">Enter your topic here:</p>
+        <p class="postform"><input type="text" name="topic" placeholder="Topic Name"></p>
+        <p class="postform">Start writing your opinion or thought:</p>
+        <p class="postform"> <textarea name="textfield" id="" cols="40" rows="20" placeholder="Start writing your opinions here............."></textarea> </p>
+        <p class="postform" > <input type="submit" id="postsubmitid" value="Submit your post"></p>
+      </form>
+</div>
+     {% endif %}  
+</body>
+
+
+
+</html>
+{% endblock %}

@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.volunteers{
+  margin:3% 2% 3% 4%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.9);
+    background-color:darkblue;
+    color: white;
+    width: 92%;
+    height: auto;
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+}
+.grid{
+    display: grid;
+    background-color: aqua;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(10,1fr); 
+    grid-row-gap: 50px;
+    grid-column-gap: 4px;
+    @media(max-width:760px ){
+      grid-template-columns:repeat(2,1fr)
+    }
+    @media(max-width:960px ){
+      grid-template-columns:repeat(3,1fr)
+    }
+    @media(max-width:1200px ){
+      grid-template-columns:repeat(4,1fr)
+    }
+}
+.ingrid{
+    border: solid 2px black;
+}
+.email{
+  width: 92%;
+  height: auto;
+  color:white;
+  background-color:black;
+  text-align: center;
+  margin:3% 2% 3% 4%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.9);
+  overflow: hidden;
+  font-size: 5vh;
+  font-weight: 600;
+}
+.contact{
+  margin-bottom: 1%;
+  
+}
+.nametag{
+  width: 100%;
+  height: auto;
+    text-align: center;
+    background-color: white;
+    font-size: 32px;
+    border: solid 1px  black;
+}
